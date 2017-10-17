@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TallerCuatroAlejandraSalas</string>
+
+
+    <string name="str_tb_p1">Usuarios</string>
+    <string name="str_tb_p2">Post</string>
+    <string name="str_tb_p3">Comentarios</string>
+    <string name="str_1">Actualizar Datos</string>
+</resources>
