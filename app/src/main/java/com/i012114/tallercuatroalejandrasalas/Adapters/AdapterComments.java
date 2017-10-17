@@ -13,6 +13,7 @@ import com.i012114.tallercuatroalejandrasalas.Models.Comments;
 import com.i012114.tallercuatroalejandrasalas.PostsActivity;
 import com.i012114.tallercuatroalejandrasalas.R;
 import com.i012114.tallercuatroalejandrasalas.UsersActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,7 @@ public class AdapterComments extends RecyclerView.Adapter<AdapterComments.ViewHo
         holder.textViewid.setText(Integer.toString(commentsList.get(position).getId()));
         holder.textViewemail.setText(commentsList.get(position).getEmail());
         holder.textViewbody.setText(commentsList.get(position).getBody());
+        Picasso.with(context).load(commentsList.get(position).commentarreglo()).into(holder.imageView);
     }
     @Override
     public int getItemCount() {

@@ -35,14 +35,14 @@
                     android:text="PostId: "
                     android:textStyle="bold"
                     android:textSize="15sp"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/black"/>
                 <TextView
                     android:id="@+id/id_tv_postid3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="1"
-                    android:textSize="15sp"
-                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
 
@@ -57,15 +57,15 @@
                     android:textStyle="bold"
                     android:textSize="15sp"
                     android:layout_marginTop="5dp"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/black"/>
                 <TextView
                     android:id="@+id/id_tv_item_id3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="1"
-                    android:textSize="15sp"
-                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
 
@@ -80,15 +80,15 @@
                     android:textStyle="bold"
                     android:textSize="15sp"
                     android:layout_marginTop="5dp"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/black"/>
                 <TextView
                     android:id="@+id/id_tv_item_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="Eliseo@gardner.biz"
-                    android:textSize="15sp"
-                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
 
@@ -103,15 +103,15 @@
                     android:textStyle="bold"
                     android:textSize="15sp"
                     android:layout_marginTop="5dp"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/black"/>
                 <TextView
                     android:id="@+id/id_tv_item_body3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text= "laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium"
-                    android:textSize="15sp"
-                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
 
