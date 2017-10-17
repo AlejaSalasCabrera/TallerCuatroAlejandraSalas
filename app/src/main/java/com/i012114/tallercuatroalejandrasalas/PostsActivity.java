@@ -52,33 +52,36 @@ public class PostsActivity extends AppCompatActivity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
+        loadData(Integer.toString(getIntent().getExtras().getInt("principalid")));
         Bundle a = getIntent().getExtras();
-        loadData(Integer.toString(a.getInt("principalid")));
+
+
 
     }
 
 
-    public Boolean isOnLine(){
+    public Boolean isOnLine() {
         ConnectivityManager connectivityManager = (ConnectivityManager)
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        if (networkInfo != null){
+        if (networkInfo != null) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
 
-    public void loadData(String str){
-        if (isOnLine()){
+    public void loadData(String str) {
+        if (isOnLine()) {
             PostsActivity.TaskCountry taskCountry = new PostsActivity.TaskCountry();
             taskCountry.execute("https://jsonplaceholder.typicode.com/posts?userId=" + str);
-        }else {
+        } else {
             Toast.makeText(this, "Sin conexion", Toast.LENGTH_SHORT).show();
         }
     }
-    public void processData(){
-         adapterPosts= new AdapterPosts(postsList, getApplicationContext());
+
+    public void processData() {
+        adapterPosts = new AdapterPosts(postsList, getApplicationContext());
         recyclerView.setAdapter(adapterPosts);
     }
 
@@ -88,6 +91,7 @@ public class PostsActivity extends AppCompatActivity {
             super.onPreExecute();
             progressBar.setVisibility(View.VISIBLE);
         }
+
         @Override
         protected String doInBackground(String... strings) {
             String content = null;
@@ -119,26 +123,40 @@ public class PostsActivity extends AppCompatActivity {
     }
 
 
-    public void showToolbar(String title, boolean flecha){
+    public void showToolbar(String title, boolean flecha) {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(flecha);
     }
 
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_uno, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        pantallauno();
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                finish();
+                return true;
+            }
+
+            case R.id.load1: {
+                loadData(Integer.toString(getIntent().getExtras().getInt("principalid")));
+                break;
+            }
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
         return super.onOptionsItemSelected(item);
-    }
+        }
+
 
     public void pantallauno(){
-        Intent a = new Intent(getApplicationContext(), UsersActivity.class);
-        startActivity(a);
+        Intent p1 = new Intent(getApplicationContext(), UsersActivity.class);
+        startActivity(p1);
     }
 
 

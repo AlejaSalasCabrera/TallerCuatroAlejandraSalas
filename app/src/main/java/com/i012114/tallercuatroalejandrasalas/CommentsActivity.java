@@ -52,8 +52,7 @@ public class CommentsActivity extends AppCompatActivity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        Bundle a = getIntent().getExtras();
-        loadData(Integer.toString(a.getInt("principalid2")));
+        loadData(Integer.toString(getIntent().getExtras().getInt("principalid2")));
 
 
     }
@@ -127,18 +126,28 @@ public class CommentsActivity extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_uno, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Showpantallatres();
+
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                finish();
+                return true;
+            }
+
+            case R.id.load1: {
+                loadData(Integer.toString(getIntent().getExtras().getInt("principalid2")));
+                break;
+            }
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
-    public void Showpantallatres(){
-        Intent a = new Intent(getApplicationContext(), UsersActivity.class);
-        startActivity(a);
-    }
+
 
 }

@@ -28,21 +28,8 @@
             android:minHeight="10dp"
             android:visibility="gone"/>
 
-        <Button
-            android:id="@+id/id_btn_listusers"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Listar Usuarios"
-            android:layout_below="@id/id_pb_item"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:onClick="loadData" />
-
         <android.support.v7.widget.RecyclerView
             android:id="@+id/id_rv_item"
-            android:layout_below="@id/id_btn_listusers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"

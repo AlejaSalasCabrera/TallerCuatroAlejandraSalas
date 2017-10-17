@@ -3,7 +3,7 @@
 
 
     <item
-        android:id="@+id/load"
+        android:id="@+id/load1"
         android:title="@string/str_1"/>
 
 </menu>

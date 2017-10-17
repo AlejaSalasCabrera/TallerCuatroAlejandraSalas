@@ -32,7 +32,6 @@ public class UsersActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     AdapterUsers adapterUsers;
     List<Users> usersList;
-    Button button;
     ProgressBar progressBar;
     Toolbar toolbar;
 
@@ -45,7 +44,6 @@ public class UsersActivity extends AppCompatActivity {
 
 
         progressBar = (ProgressBar) findViewById(R.id.id_pb_item);
-        button = (Button) findViewById(R.id.id_btn_listusers);
         recyclerView = (RecyclerView) findViewById(R.id.id_rv_item);
         toolbar = (Toolbar) findViewById(R.id.id_toolbar);
 
@@ -54,7 +52,7 @@ public class UsersActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-
+        loadData();
 
     }
 
@@ -69,7 +67,7 @@ public class UsersActivity extends AppCompatActivity {
         }
     }
 
-    public void loadData(View view){
+    public void loadData(){
         if (isOnLine()){
             TaskCountry taskCountry = new TaskCountry();
             taskCountry.execute("https://jsonplaceholder.typicode.com/users");
@@ -127,13 +125,20 @@ public class UsersActivity extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_uno, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
-    public boolean onOptionsItemSelected(MenuItem menuItem){
+    public boolean onOptionsItemSelected(MenuItem item){
 
-        Toast t = Toast.makeText(this, "Usuarios Actualizados", Toast.LENGTH_SHORT);
-        return super.onOptionsItemSelected(menuItem);
+        switch (item.getItemId()){
+            case R.id.load1:{
+                 loadData();
+
+             }
+             break;
+        }
+
+        return true;
 
     }
 
