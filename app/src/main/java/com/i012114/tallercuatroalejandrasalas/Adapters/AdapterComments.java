@@ -1,7 +1,6 @@
 package com.i012114.tallercuatroalejandrasalas.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.i012114.tallercuatroalejandrasalas.Models.Comments;
-import com.i012114.tallercuatroalejandrasalas.PostsActivity;
 import com.i012114.tallercuatroalejandrasalas.R;
-import com.i012114.tallercuatroalejandrasalas.UsersActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -74,14 +71,6 @@ public class AdapterComments extends RecyclerView.Adapter<AdapterComments.ViewHo
 
         }
 
-        //@Override
-        //public void onClick(View view) {
-            //Context context = view.getContext();
-            //Intent intent = new Intent(context,PostsActivity.class);
-            //intent.putExtra("principalid2", commentsList.get(getLayoutPosition()).getId());
-           // context.startActivity(intent);
-
-        //}
 
     }
 }

@@ -78,7 +78,7 @@ public class AdapterPosts extends RecyclerView.Adapter<AdapterPosts.ViewHolder> 
         public void onClick(View view) {
             Context context = view.getContext();
             Intent intent = new Intent(context, CommentsActivity.class);
-            intent.putExtra("principalid2", postsList.get(getLayoutPosition()).getId());
+            intent.putExtra("idPost", postsList.get(getLayoutPosition()).getId());
             context.startActivity(intent);
 
         }

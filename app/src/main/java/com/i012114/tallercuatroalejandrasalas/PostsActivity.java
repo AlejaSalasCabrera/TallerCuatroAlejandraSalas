@@ -52,7 +52,7 @@ public class PostsActivity extends AppCompatActivity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        loadData(Integer.toString(getIntent().getExtras().getInt("principalid")));
+        loadData(Integer.toString(getIntent().getExtras().getInt("idUser")));
         Bundle a = getIntent().getExtras();
 
 
@@ -71,10 +71,10 @@ public class PostsActivity extends AppCompatActivity {
         }
     }
 
-    public void loadData(String str) {
+    public void loadData(String idUno) {
         if (isOnLine()) {
             PostsActivity.TaskCountry taskCountry = new PostsActivity.TaskCountry();
-            taskCountry.execute("https://jsonplaceholder.typicode.com/posts?userId=" + str);
+            taskCountry.execute("https://jsonplaceholder.typicode.com/posts?userId=" + idUno);
         } else {
             Toast.makeText(this, "Sin conexion", Toast.LENGTH_SHORT).show();
         }
@@ -143,7 +143,7 @@ public class PostsActivity extends AppCompatActivity {
             }
 
             case R.id.load1: {
-                loadData(Integer.toString(getIntent().getExtras().getInt("principalid")));
+                loadData(Integer.toString(getIntent().getExtras().getInt("idUser")));
                 break;
             }
 

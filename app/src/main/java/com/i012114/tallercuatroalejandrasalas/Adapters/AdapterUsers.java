@@ -82,7 +82,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.ViewHolder> 
         public void onClick(View view) {
             Context context = view.getContext();
             Intent intent = new Intent(context, PostsActivity.class);
-            intent.putExtra("principalid", usersList.get(getLayoutPosition()).getId());
+            intent.putExtra("idUser", usersList.get(getLayoutPosition()).getId());
             context.startActivity(intent);
 
         }
